@@ -1,0 +1,1223 @@
+/* Frosted Glass weather panel; SVG icons supplied by MMM-WeatherCards.js */
+.MMM-WeatherCards,
+.MMM-WeatherCards * {
+  box-sizing: border-box;
+}
+.MMM-WeatherCards .wd-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  color: #f7fbff;
+  font-family: var(--font-primary, "Roboto Condensed", "Arial", sans-serif);
+}
+.MMM-WeatherCards .wd-glass {
+  background: linear-gradient(
+    118deg,
+    rgba(222, 239, 255, 0.21),
+    rgba(39, 55, 74, 0.36) 52%,
+    rgba(18, 27, 42, 0.48)
+  );
+  border: 1px solid rgba(238, 248, 255, 0.43);
+  border-radius: 18px;
+  box-shadow:
+    0 7px 25px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.17);
+  -webkit-backdrop-filter: blur(19px) saturate(145%);
+  backdrop-filter: blur(19px) saturate(145%);
+  overflow: hidden;
+}
+.MMM-WeatherCards .wd-main-card {
+  padding: 12px 13px 11px;
+  min-height: 245px;
+}
+.MMM-WeatherCards .wd-header {
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: 0.055em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+  text-align: left;
+  text-shadow: 0 1px 2px #173047;
+}
+.MMM-WeatherCards .wd-conditions {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(76px, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 5px;
+  min-height: 100px;
+  padding: 4px 0 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
+.MMM-WeatherCards .wd-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.MMM-WeatherCards .wd-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.MMM-WeatherCards .wd-detail-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  flex: 0 0 25px;
+  height: 25px;
+}
+.MMM-WeatherCards .wd-line-icon {
+  width: 25px;
+  height: 25px;
+  overflow: visible;
+  color: #dcefff;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.15));
+}
+.MMM-WeatherCards .wd-line-sunrise {
+  color: #ffe08a;
+}
+.MMM-WeatherCards .wd-line-sunset {
+  color: #ffbb8b;
+}
+.MMM-WeatherCards .wd-detail-value {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.MMM-WeatherCards .wd-detail-label {
+  font-size: 10px;
+  color: #e0eaf6;
+  line-height: 1.15;
+  margin-top: 2px;
+}
+.MMM-WeatherCards .wd-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.MMM-WeatherCards .wd-svg {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.24));
+}
+.MMM-WeatherCards .wd-hero-svg {
+  width: 98px;
+  height: 98px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(255, 201, 71, 0.28));
+}
+.MMM-WeatherCards .wd-temperature {
+  min-width: 0;
+  text-align: right;
+}
+.MMM-WeatherCards .wd-temp-big {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.MMM-WeatherCards .wd-condition-word {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: 3px;
+}
+.MMM-WeatherCards .wd-feels-like {
+  font-size: 10px;
+  white-space: nowrap;
+  margin-top: 4px;
+  color: #e4edfa;
+}
+.MMM-WeatherCards .wd-hourly-section {
+  padding-top: 6px;
+}
+.MMM-WeatherCards .wd-section-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.MMM-WeatherCards .wd-hourly-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.MMM-WeatherCards .wd-hour {
+  text-align: center;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 0 3px;
+}
+.MMM-WeatherCards .wd-hour + .wd-hour {
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+.MMM-WeatherCards .wd-hour-time {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.MMM-WeatherCards .wd-hour-icon {
+  display: grid;
+  place-items: center;
+}
+.MMM-WeatherCards .wd-hour-svg {
+  height: 32px;
+  width: 36px;
+}
+.MMM-WeatherCards .wd-hour-temp {
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.1;
+}
+.MMM-WeatherCards .wd-hour-rain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 10px;
+  color: #a9e3ff;
+  white-space: nowrap;
+}
+.MMM-WeatherCards .wd-drop-icon {
+  width: 11px;
+  height: 12px;
+}
+.MMM-WeatherCards .wd-forecast-card {
+  padding: 10px 13px 9px;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-header {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.MMM-WeatherCards .wd-forecast-list {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.MMM-WeatherCards .wd-forecast-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 55px 42px 42px;
+  align-items: center;
+  gap: 5px;
+  min-height: 22px;
+}
+.MMM-WeatherCards .wd-forecast-day {
+  font-size: 13px;
+  font-weight: 650;
+  text-align: left;
+  white-space: nowrap;
+}
+.MMM-WeatherCards .wd-forecast-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MMM-WeatherCards .wd-forecast-svg {
+  width: 25px;
+  height: 25px;
+}
+.MMM-WeatherCards .wd-low,
+.MMM-WeatherCards .wd-high {
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+}
+.MMM-WeatherCards .wd-low {
+  color: #d8e8ff;
+}
+.MMM-WeatherCards .wd-high {
+  font-weight: 800;
+}
+.MMM-WeatherCards .wd-extras {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.MMM-WeatherCards .wd-mini-card {
+  padding: 9px 9px;
+  min-width: 0;
+  min-height: 78px;
+}
+.MMM-WeatherCards .wd-mini-content {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 100%;
+  min-width: 0;
+}
+.MMM-WeatherCards .wd-mini-symbol,
+.MMM-WeatherCards .wd-moon-svg {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+}
+.MMM-WeatherCards .wd-mini-symbol {
+  color: #b4f6c3;
+  background: rgba(81, 185, 130, 0.16);
+  padding: 5px;
+  border-radius: 50%;
+}
+.MMM-WeatherCards .wd-moon-svg {
+  filter: drop-shadow(0 1px 6px rgba(236, 236, 255, 0.3));
+}
+.MMM-WeatherCards .wd-mini-text {
+  min-width: 0;
+}
+.MMM-WeatherCards .wd-mini-title {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+.MMM-WeatherCards .wd-mini-value {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.MMM-WeatherCards .wd-mini-sub {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #dce9f6;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.MMM-WeatherCards .wd-aqi-good {
+  color: #99f5bd;
+}
+.MMM-WeatherCards .wd-aqi-moderate {
+  color: #ffe69b;
+}
+.MMM-WeatherCards .wd-aqi-sensitive {
+  color: #ffd099;
+}
+.MMM-WeatherCards .wd-aqi-unhealthy {
+  color: #ffaaaa;
+}
+.MMM-WeatherCards .wd-status {
+  padding: 16px;
+  font-size: 14px;
+}
+@media (max-height: 900px) {
+  .MMM-WeatherCards .wd-main-card {
+    min-height: 0;
+    padding: 9px 11px 7px;
+  }
+  .MMM-WeatherCards .wd-conditions {
+    min-height: 90px;
+  }
+  .MMM-WeatherCards .wd-hero-svg {
+    width: 80px;
+    height: 80px;
+  }
+  .MMM-WeatherCards .wd-temp-big {
+    font-size: 49px;
+  }
+  .MMM-WeatherCards .wd-mini-card {
+    min-height: 65px;
+    padding: 6px;
+  }
+  .MMM-WeatherCards .wd-mini-symbol,
+  .MMM-WeatherCards .wd-moon-svg {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+  .MMM-WeatherCards .wd-hour-svg {
+    height: 28px;
+  }
+}
+
+/* === module WEATHER POLISH V1 START ===
+   Fits 6-hour + 5-day information in the existing upper-right slot. */
+.MMM-WeatherCards .wd-dashboard {
+  gap: 6px !important;
+}
+.MMM-WeatherCards .wd-main-card {
+  min-height: 0 !important;
+  padding: 8px 10px 7px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-header {
+  font-size: 15px !important;
+  padding-bottom: 4px !important;
+}
+.MMM-WeatherCards .wd-conditions {
+  min-height: 80px !important;
+  padding: 2px 0 3px !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(65px, 0.85fr) minmax(0, 1fr) !important;
+}
+.MMM-WeatherCards .wd-details {
+  gap: 2px !important;
+}
+.MMM-WeatherCards .wd-detail-row {
+  gap: 4px !important;
+}
+.MMM-WeatherCards .wd-detail-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-basis: 20px !important;
+}
+.MMM-WeatherCards .wd-line-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
+.MMM-WeatherCards .wd-detail-value {
+  font-size: 11px !important;
+}
+.MMM-WeatherCards .wd-detail-label {
+  font-size: 9px !important;
+  margin-top: 0 !important;
+}
+.MMM-WeatherCards .wd-hero-svg {
+  width: 73px !important;
+  height: 73px !important;
+}
+.MMM-WeatherCards .wd-temp-big {
+  font-size: 49px !important;
+}
+.MMM-WeatherCards .wd-hourly-section {
+  padding-top: 3px !important;
+}
+.MMM-WeatherCards .wd-section-title {
+  font-size: 11px !important;
+  margin-bottom: 3px !important;
+}
+.MMM-WeatherCards .wd-hourly-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
+.MMM-WeatherCards .wd-hour {
+  padding: 0 1px !important;
+}
+.MMM-WeatherCards .wd-hour-time {
+  font-size: 10px !important;
+}
+.MMM-WeatherCards .wd-hour-svg {
+  width: 30px !important;
+  height: 27px !important;
+}
+.MMM-WeatherCards .wd-hour-temp {
+  font-size: 15px !important;
+}
+.MMM-WeatherCards .wd-hour-rain {
+  gap: 1px !important;
+  font-size: 9px !important;
+}
+.MMM-WeatherCards .wd-drop-icon {
+  width: 9px !important;
+  height: 10px !important;
+}
+.MMM-WeatherCards .wd-forecast-card {
+  padding: 7px 10px 7px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-header {
+  font-size: 13px !important;
+  padding-bottom: 3px !important;
+}
+.MMM-WeatherCards .wd-forecast-list {
+  margin-top: 3px !important;
+  gap: 0 !important;
+}
+.MMM-WeatherCards .wd-forecast-row {
+  grid-template-columns: minmax(0, 1fr) 30px 38px 38px 38px !important;
+  min-height: 19px !important;
+  gap: 3px !important;
+}
+.MMM-WeatherCards .wd-forecast-day {
+  font-size: 12px !important;
+}
+.MMM-WeatherCards .wd-forecast-svg {
+  width: 19px !important;
+  height: 19px !important;
+}
+.MMM-WeatherCards .wd-daily-rain {
+  font-size: 10px !important;
+  text-align: right;
+  color: #b6e6ff;
+  white-space: nowrap;
+}
+.MMM-WeatherCards .wd-daily-rain::before {
+  content: "💧";
+  font-size: 9px;
+  margin-right: 1px;
+}
+.MMM-WeatherCards .wd-low,
+.MMM-WeatherCards .wd-high {
+  font-size: 12px !important;
+}
+.MMM-WeatherCards .wd-extras {
+  gap: 6px !important;
+}
+.MMM-WeatherCards .wd-mini-card {
+  min-height: 60px !important;
+  padding: 5px 7px !important;
+}
+.MMM-WeatherCards .wd-mini-symbol,
+.MMM-WeatherCards .wd-moon-svg {
+  width: 38px !important;
+  height: 38px !important;
+  flex-basis: 38px !important;
+}
+.MMM-WeatherCards .wd-mini-title {
+  font-size: 10px !important;
+}
+.MMM-WeatherCards .wd-mini-value {
+  font-size: 12px !important;
+  margin-top: 2px !important;
+}
+.MMM-WeatherCards .wd-mini-sub {
+  font-size: 9px !important;
+  margin-top: 2px !important;
+}
+@media (max-width: 1350px), (max-height: 800px) {
+  .MMM-WeatherCards .wd-hero-svg {
+    width: 63px !important;
+    height: 63px !important;
+  }
+  .MMM-WeatherCards .wd-temp-big {
+    font-size: 42px !important;
+  }
+  .MMM-WeatherCards .wd-hour-svg {
+    width: 24px !important;
+    height: 23px !important;
+  }
+  .MMM-WeatherCards .wd-hour-time {
+    font-size: 9px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-row {
+    min-height: 19px !important;
+  }
+}
+/* === module WEATHER POLISH V1 END === */
+
+/* === module WEATHER SPACE REFINEMENT V2 START ===
+   Forecast + AQI + Moon now share one glass card.
+   No changes to calendar, wallpaper, clock or lunch. */
+.MMM-WeatherCards .wd-dashboard {
+  gap: 6px !important;
+}
+.MMM-WeatherCards .wd-main-card {
+  padding: 7px 11px 7px !important;
+  min-height: 0 !important;
+}
+.MMM-WeatherCards .wd-conditions {
+  grid-template-columns: minmax(0, 1.3fr) minmax(70px, 0.79fr) minmax(0, 1.08fr) !important;
+  min-height: 88px !important;
+  column-gap: 5px !important;
+  padding: 4px 0 5px !important;
+}
+.MMM-WeatherCards .wd-details {
+  gap: 2px !important;
+}
+.MMM-WeatherCards .wd-detail-row {
+  gap: 6px !important;
+}
+.MMM-WeatherCards .wd-detail-icon {
+  width: 23px !important;
+  height: 23px !important;
+  flex-basis: 23px !important;
+}
+.MMM-WeatherCards .wd-line-icon {
+  width: 23px !important;
+  height: 23px !important;
+}
+.MMM-WeatherCards .wd-detail-value {
+  font-size: 13px !important;
+  line-height: 1.12 !important;
+}
+.MMM-WeatherCards .wd-detail-label {
+  font-size: 10.5px !important;
+  line-height: 1.12 !important;
+  margin-top: 2px !important;
+}
+.MMM-WeatherCards .wd-hero-svg {
+  width: 78px !important;
+  height: 78px !important;
+}
+.MMM-WeatherCards .wd-temp-big {
+  font-size: 55px !important;
+}
+.MMM-WeatherCards .wd-condition-word {
+  font-size: 15px !important;
+  margin-top: 3px !important;
+}
+.MMM-WeatherCards .wd-feels-like {
+  font-size: 13px !important;
+  margin-top: 3px !important;
+}
+.MMM-WeatherCards .wd-forecast-card {
+  padding: 7px 11px 6px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-header {
+  font-size: 14px !important;
+  padding-bottom: 3px !important;
+}
+.MMM-WeatherCards .wd-forecast-list {
+  margin-top: 3px !important;
+  gap: 0 !important;
+}
+.MMM-WeatherCards .wd-forecast-row {
+  grid-template-columns: 78px minmax(0, 1fr) 29px 42px 38px 38px !important;
+  gap: 5px !important;
+  min-height: 23px !important;
+}
+.MMM-WeatherCards .wd-forecast-day {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+.MMM-WeatherCards .wd-forecast-condition {
+  font-size: 11px !important;
+  color: #e3edfa !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.MMM-WeatherCards .wd-forecast-svg {
+  width: 23px !important;
+  height: 23px !important;
+}
+.MMM-WeatherCards .wd-daily-rain {
+  font-size: 11px !important;
+}
+.MMM-WeatherCards .wd-low,
+.MMM-WeatherCards .wd-high {
+  font-size: 13px !important;
+}
+.MMM-WeatherCards .wd-forecast-card > .wd-extras {
+  margin-top: 4px !important;
+  padding-top: 5px !important;
+  border-top: 1px solid rgba(240, 248, 255, 0.3) !important;
+  gap: 8px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-card {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  padding: 1px 3px !important;
+  min-height: 44px !important;
+  overflow: visible !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-card + .wd-mini-card {
+  border-left: 1px solid rgba(240, 248, 255, 0.25) !important;
+  padding-left: 10px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-symbol,
+.MMM-WeatherCards .wd-forecast-card .wd-moon-svg {
+  width: 34px !important;
+  height: 34px !important;
+  flex-basis: 34px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-title {
+  font-size: 11px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-value {
+  font-size: 12px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-sub {
+  font-size: 9px !important;
+}
+@media (max-width: 1350px), (max-height: 800px) {
+  .MMM-WeatherCards .wd-conditions {
+    min-height: 83px !important;
+  }
+  .MMM-WeatherCards .wd-hero-svg {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .MMM-WeatherCards .wd-temp-big {
+    font-size: 48px !important;
+  }
+  .MMM-WeatherCards .wd-detail-value {
+    font-size: 11.5px !important;
+  }
+  .MMM-WeatherCards .wd-detail-label {
+    font-size: 9px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-row {
+    min-height: 21px !important;
+    gap: 3px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-day {
+    font-size: 11px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-card > .wd-extras {
+    padding-top: 5px !important;
+  }
+}
+/* === module WEATHER SPACE REFINEMENT V2 END === */
+
+/* module SELECTED WEATHER DESIGN V7 */
+.MMM-WeatherCards .wd-dashboard {
+  gap: 4px !important;
+}
+.MMM-WeatherCards .wd-main-card {
+  padding: 6px 10px 6px !important;
+}
+.MMM-WeatherCards .wd-conditions {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) minmax(0, 1.12fr) !important;
+  column-gap: 8px !important;
+  align-items: center !important;
+  min-height: 94px !important;
+}
+.MMM-WeatherCards .wd-detail-value {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+}
+.MMM-WeatherCards .wd-detail-label {
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+}
+.MMM-WeatherCards .wd-detail-icon,
+.MMM-WeatherCards .wd-line-icon {
+  width: 25px !important;
+  height: 25px !important;
+  flex-basis: 25px !important;
+}
+.MMM-WeatherCards .wd-hero-svg {
+  width: 76px !important;
+  height: 76px !important;
+}
+.MMM-WeatherCards .wd-temperature {
+  text-align: left !important;
+  min-width: 0 !important;
+}
+.MMM-WeatherCards .wd-temp-big {
+  font-size: 49px !important;
+  line-height: 1 !important;
+}
+.MMM-WeatherCards .wd-condition-word {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+}
+.MMM-WeatherCards .wd-feels-like {
+  font-size: 13px !important;
+}
+.MMM-WeatherCards .wd-forecast-card {
+  padding: 7px 10px 7px !important;
+}
+.MMM-WeatherCards .wd-forecast-list.wd-forecast-columns {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  margin: 5px 0 0 !important;
+  width: 100% !important;
+}
+.MMM-WeatherCards .wd-forecast-tile {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 2px !important;
+  min-width: 0 !important;
+  padding: 2px 2px 4px !important;
+  text-align: center !important;
+  border-right: 1px solid rgba(220, 238, 255, 0.17) !important;
+}
+.MMM-WeatherCards .wd-forecast-tile:last-child {
+  border-right: 0 !important;
+}
+.MMM-WeatherCards .wd-forecast-tile .wd-forecast-day {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+.MMM-WeatherCards .wd-forecast-tile .wd-forecast-svg {
+  width: 33px !important;
+  height: 33px !important;
+}
+.MMM-WeatherCards .wd-forecast-temps {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+.MMM-WeatherCards .wd-forecast-tile .wd-forecast-condition {
+  font-size: 10px !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+.MMM-WeatherCards .wd-forecast-tile .wd-daily-rain {
+  font-size: 10px !important;
+  color: #a7dcff !important;
+}
+.MMM-WeatherCards .wd-forecast-tile .wd-daily-rain::before {
+  content: "💧";
+  font-size: 9px;
+  margin-right: 2px;
+}
+.MMM-WeatherCards .wd-forecast-card > .wd-extras {
+  margin-top: 5px !important;
+  padding-top: 5px !important;
+}
+.MMM-WeatherCards .wd-aqi-meter {
+  position: relative;
+  height: 9px;
+  width: 100%;
+  margin: 5px 0 3px;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    #3fc879 0%,
+    #8edc5d 17%,
+    #f6e76c 34%,
+    #f6a23b 51%,
+    #e84b51 68%,
+    #8d3f87 84%,
+    #76233b 100%
+  );
+}
+.MMM-WeatherCards .wd-aqi-marker {
+  position: absolute;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #e8f8ff;
+  box-shadow: 0 0 5px #0008;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-title {
+  font-size: 11px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-value {
+  font-size: 12px !important;
+}
+@media (max-width: 1450px) {
+  .MMM-WeatherCards .wd-conditions {
+    column-gap: 3px !important;
+  }
+  .MMM-WeatherCards .wd-detail-value {
+    font-size: 12px !important;
+  }
+  .MMM-WeatherCards .wd-detail-label {
+    font-size: 9px !important;
+  }
+  .MMM-WeatherCards .wd-hero-svg {
+    width: 63px !important;
+    height: 63px !important;
+  }
+  .MMM-WeatherCards .wd-temp-big {
+    font-size: 40px !important;
+  }
+  .MMM-WeatherCards .wd-condition-word {
+    font-size: 14px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-temps {
+    font-size: 10px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-tile .wd-forecast-day {
+    font-size: 9px !important;
+  }
+}
+
+/* module WEATHER V8 BEGIN */
+/* Current conditions: use all three columns, with readable sunrise/sunset/wind.
+   Weather only: no calendar, wallpaper or global MagicMirror rules. */
+.MMM-WeatherCards .wd-conditions {
+  display: grid !important;
+  grid-template-columns: minmax(0, 36fr) minmax(0, 24fr) minmax(0, 40fr) !important;
+  column-gap: 4px !important;
+  align-items: center !important;
+  min-height: 92px !important;
+  padding: 3px 0 4px !important;
+}
+.MMM-WeatherCards .wd-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+.MMM-WeatherCards .wd-detail-row {
+  display: flex !important;
+  gap: 7px !important;
+  align-items: center !important;
+  min-width: 0 !important;
+}
+.MMM-WeatherCards .wd-detail-icon {
+  width: 25px !important;
+  height: 25px !important;
+  flex: 0 0 25px !important;
+}
+.MMM-WeatherCards .wd-line-icon {
+  width: 25px !important;
+  height: 25px !important;
+}
+.MMM-WeatherCards .wd-detail-text {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  text-align: left !important;
+}
+.MMM-WeatherCards .wd-detail-value {
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+  font-weight: 750 !important;
+  white-space: nowrap !important;
+}
+.MMM-WeatherCards .wd-detail-label {
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+  margin-top: 2px !important;
+}
+.MMM-WeatherCards .wd-visual {
+  width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+.MMM-WeatherCards .wd-hero-svg {
+  width: 86px !important;
+  height: 86px !important;
+  max-width: 100% !important;
+}
+.MMM-WeatherCards .wd-temperature {
+  text-align: left !important;
+  min-width: 0 !important;
+  padding-left: 5px !important;
+}
+.MMM-WeatherCards .wd-temp-big {
+  font-size: 51px !important;
+  line-height: 1 !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+.MMM-WeatherCards .wd-condition-word {
+  font-size: 17px !important;
+  line-height: 1.15 !important;
+  font-weight: 750 !important;
+  margin-top: 2px !important;
+}
+.MMM-WeatherCards .wd-feels-like {
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  margin-top: 3px !important;
+}
+/* Combined air/moon footer: content fills each half, gauge spans the full AQI half. */
+.MMM-WeatherCards .wd-forecast-card > .wd-extras {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin-top: 6px !important;
+  padding-top: 6px !important;
+  align-items: stretch !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-card {
+  position: relative !important;
+  min-width: 0 !important;
+  min-height: 60px !important;
+  padding: 2px 10px 3px !important;
+  overflow: visible !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-card + .wd-mini-card {
+  border-left: 1px solid rgba(240, 248, 255, 0.32) !important;
+  padding-left: 12px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-content {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 9px !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 43px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  width: auto !important;
+  text-align: left !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-symbol,
+.MMM-WeatherCards .wd-forecast-card .wd-moon-svg {
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 38px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-title {
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-value {
+  font-size: 13px !important;
+  line-height: 1.12 !important;
+  margin-top: 3px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-mini-sub {
+  font-size: 10px !important;
+  line-height: 1.15 !important;
+  margin-top: 2px !important;
+}
+.MMM-WeatherCards .wd-lunar-card .wd-mini-content {
+  justify-content: space-around !important;
+  gap: 11px !important;
+}
+.MMM-WeatherCards .wd-lunar-card .wd-moon-svg {
+  width: 45px !important;
+  height: 45px !important;
+  flex: 0 0 45px !important;
+}
+.MMM-WeatherCards .wd-lunar-card .wd-mini-value {
+  font-size: 14px !important;
+}
+.MMM-WeatherCards .wd-aqi-card .wd-mini-content {
+  padding-bottom: 14px !important;
+}
+.MMM-WeatherCards .wd-aqi-card .wd-aqi-meter {
+  position: absolute !important;
+  left: 11px !important;
+  right: 11px !important;
+  bottom: 3px !important;
+  width: auto !important;
+  height: 10px !important;
+  margin: 0 !important;
+}
+.MMM-WeatherCards .wd-aqi-card .wd-aqi-marker {
+  width: 13px !important;
+  height: 13px !important;
+}
+/* Short displays keep everything within the weather stack. */
+@media (max-width: 1450px), (max-height: 800px) {
+  .MMM-WeatherCards .wd-conditions {
+    grid-template-columns: minmax(0, 38fr) minmax(0, 22fr) minmax(0, 40fr) !important;
+    min-height: 89px !important;
+    column-gap: 2px !important;
+  }
+  .MMM-WeatherCards .wd-detail-icon,
+  .MMM-WeatherCards .wd-line-icon {
+    width: 23px !important;
+    height: 23px !important;
+    flex-basis: 23px !important;
+  }
+  .MMM-WeatherCards .wd-detail-row {
+    gap: 5px !important;
+  }
+  .MMM-WeatherCards .wd-detail-value {
+    font-size: 13px !important;
+  }
+  .MMM-WeatherCards .wd-detail-label {
+    font-size: 10px !important;
+  }
+  .MMM-WeatherCards .wd-hero-svg {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .MMM-WeatherCards .wd-temp-big {
+    font-size: 43px !important;
+  }
+  .MMM-WeatherCards .wd-condition-word {
+    font-size: 15px !important;
+  }
+  .MMM-WeatherCards .wd-feels-like {
+    font-size: 11px !important;
+  }
+  .MMM-WeatherCards .wd-forecast-card .wd-mini-card {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  .MMM-WeatherCards .wd-aqi-card .wd-aqi-meter {
+    left: 6px !important;
+    right: 6px !important;
+  }
+}
+/* module WEATHER V8 END */
+
+/* module CURRENT CONDITIONS V11 START */
+.MMM-WeatherCards .wd-main-card .wd-conditions {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.65fr) !important;
+  grid-template-rows: 78px 44px !important;
+  gap: 4px 12px !important;
+  min-height: 0 !important;
+  padding: 4px 0 !important;
+  align-items: center !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-visual {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  justify-content: center !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-hero-svg {
+  width: 86px !important;
+  height: 86px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-temperature {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  column-gap: 18px !important;
+  align-items: center !important;
+  text-align: left !important;
+  padding: 0 8px 0 0 !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-temp-big {
+  grid-column: 1 !important;
+  grid-row: 1 / 3 !important;
+  font-size: 64px !important;
+  line-height: 1 !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-condition-word {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  align-self: end !important;
+  font-size: 19px !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+  margin: 0 !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-feels-like {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  align-self: start !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  margin: 4px 0 0 !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-details {
+  grid-column: 1 / -1 !important;
+  grid-row: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  justify-self: stretch !important;
+  border-top: 1px solid rgba(240, 248, 255, 0.22) !important;
+  padding-top: 6px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-detail-row {
+  justify-content: center !important;
+  gap: 7px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-detail-row + .wd-detail-row {
+  border-left: 1px solid rgba(240, 248, 255, 0.22) !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-detail-text {
+  flex: 0 1 auto !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-detail-icon,
+.MMM-WeatherCards .wd-main-card .wd-line-icon {
+  width: 27px !important;
+  height: 27px !important;
+  flex: 0 0 27px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-detail-value {
+  font-size: 16px !important;
+  line-height: 1.1 !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-detail-label {
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+  margin-top: 2px !important;
+}
+/* module CURRENT CONDITIONS V11 END */
+
+/* module WEATHER READABLE LABELS V12 START */
+.MMM-WeatherCards .wd-main-card .wd-condition-word {
+  font-size: 27px !important;
+  line-height: 1.05 !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-feels-like {
+  font-size: 18px !important;
+  line-height: 1.15 !important;
+  margin-top: 5px !important;
+}
+.MMM-WeatherCards .wd-hourly-section .wd-hour-rain {
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  font-weight: 750 !important;
+  gap: 2px !important;
+  color: #bceaff !important;
+}
+.MMM-WeatherCards .wd-hourly-section .wd-drop-icon {
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-forecast-tile .wd-daily-rain {
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  font-weight: 750 !important;
+  color: #bceaff !important;
+}
+.MMM-WeatherCards .wd-forecast-card .wd-forecast-tile .wd-daily-rain::before {
+  font-size: 14px !important;
+  margin-right: 3px !important;
+}
+/* module WEATHER READABLE LABELS V12 END */
+
+/* module WEATHER CONSISTENT SPACING V13 START */
+.MMM-WeatherCards .wd-dashboard {
+  gap: 10px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-conditions {
+  grid-template-rows: 72px 44px !important;
+}
+.MMM-WeatherCards .wd-main-card .wd-hero-svg {
+  width: 80px !important;
+  height: 80px !important;
+}
+.MMM-WeatherCards .wd-hourly-section .wd-hour-rain {
+  gap: 0 !important;
+  min-height: 18px !important;
+}
+.MMM-WeatherCards .wd-hourly-section .wd-drop-icon {
+  display: none !important;
+}
+.MMM-WeatherCards .wd-hourly-section .wd-hour-rain::before {
+  content: "💧";
+  font-size: 14px !important;
+  margin-right: 3px !important;
+}
+/* module WEATHER CONSISTENT SPACING V13 END */
+
+/* Independent region sizing and configurable forecast counts. */
+.MMM-WeatherCards .wd-dashboard {
+  width: 480px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.MMM-WeatherCards .wd-hourly-grid {
+  grid-template-columns: repeat(
+    var(--hour-count, 6),
+    minmax(0, 1fr)
+  ) !important;
+  overflow-x: auto;
+}
+.MMM-WeatherCards .wd-forecast-columns {
+  grid-template-columns: repeat(var(--day-count, 5), minmax(0, 1fr)) !important;
+  overflow-x: auto;
+}
+.MMM-WeatherCards .wd-attribution {
+  font-size: 11px;
+  color: #b8cce6;
+  text-align: right;
+}
